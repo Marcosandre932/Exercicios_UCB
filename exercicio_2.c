@@ -7,34 +7,17 @@
 int main(int argc, char const *argv[])
 {
 
-    float a, b, c, maior;
-
-    printf("Digite o 1 valor: ");
-    scanf("%f", &a);
-
-    printf("Digite o 2 valor: ");
-    scanf("%f", &b);
-
-    printf("Digite o 3 valor: ");
-    scanf("%f", &b);
-
-    if (a > b && a > c)
+    int i, n;
+    int Fat = 1;
+    n = 5;
+    i = n;
+    while (i >= 1)
     {
-        maior = a;
-    }
-    else if (b > a && b > c)
-    {
-        maior = b;
-    }
-    else
-    {
-        maior = c;
+        Fat *= i;
+        i--;
     }
 
-    printf("\n\n\n\n\n\n\n\n\n");
-    printf("\n\n\n\n\n\n\n\n\n");
-    printf("\n\n\n\n\n\n\n\n\n");
-    printf("\t\t\t %.2f", maior);
+    printf("%d", Fat);
 
     return 0;
 }
