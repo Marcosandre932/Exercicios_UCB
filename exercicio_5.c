@@ -7,16 +7,13 @@
 int main(int argc, char const *argv[])
 {
 
-    for (int i = 1; i <= 7; i++)
-    {
-        for (int j = 1; j <= 7; j++)
-        {
-            if (i + j == 7)
-            {
-                printf("\nDado 1: %d | Dado 2: %d | Igual a 7", i, j);
-            }
-        }
-    }
+    char opcao;
 
+    printf("Digite seu sexo com M ou F: ");
+    scanf("%c", &opcao);
+
+    char *sexo = (opcao == 'M') ? "Masculino" : "Feminino";
+
+    printf("%s", sexo);
     return 0;
 }

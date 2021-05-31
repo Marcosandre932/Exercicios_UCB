@@ -4,61 +4,63 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int primo(int num)
+int main(int argc, char const *argv[])
 {
-    int i, resultado = 0;
 
-    if (num == 1)
+    int opcao;
+
+    printf("Menu de Opções");
+    printf("\n============");
+    printf("\n1 –Norte");
+    printf("\n2 –Nordeste");
+    printf("\n3 –Centro-Oeste");
+    printf("\n4 –Sudeste");
+    printf("\n5 –Sul");
+    printf("\n0 –Sair do programa\n\n");
+    scanf("%d", &opcao);
+
+    if (opcao == 0)
     {
         return 0;
     }
 
-    for (i = 2; i <= num / 2; i++)
+    if (opcao == 1)
     {
-        if (num % i == 0)
-        {
-            resultado++;
-            break;
-        }
+        printf("\n\n\n\n\n\n\n\n");
+        printf("\n\n\n\n\n\n\n\n");
+        printf("\t\t\t Norte");
+        return 0;
     }
 
-    if (resultado == 0)
+    if (opcao == 2)
     {
-        return 1;
+        printf("\n\n\n\n\n\n\n\n");
+        printf("\n\n\n\n\n\n\n\n");
+        printf("\t\t\t Nordeste");
+        return 0;
     }
 
-    return 0;
-}
-
-int main(int argc, char const *argv[])
-{
-
-    int natural_1, natural_2;
-
-    printf("Digite o primeiro natural: ");
-    scanf("%d", &natural_1);
-
-    printf("Digite o segundo natural: ");
-    scanf("%d", &natural_2);
-
-    if (natural_1 < natural_2)
+    if (opcao == 3)
     {
-        for (int i = natural_1; i < natural_2; i++)
-        {
-            if (primo(i) == 1)
-            {
-                printf("\n%d", i);
-            }
-        }
+        printf("\n\n\n\n\n\n\n\n");
+        printf("\n\n\n\n\n\n\n\n");
+        printf("\t\t\t Centro-Oeste");
+        return 0;
     }
-    else
+
+    if (opcao == 4)
     {
-        for (int i = natural_2; i < natural_1; i++)
-        {
-            if (primo(i) == 1)
-            {
-                printf("\n%d", i);
-            }
-        }
+        printf("\n\n\n\n\n\n\n\n");
+        printf("\n\n\n\n\n\n\n\n");
+        printf("\t\t\t Sudeste");
+        return 0;
+    }
+
+    if (opcao == 5)
+    {
+        printf("\n\n\n\n\n\n\n\n");
+        printf("\n\n\n\n\n\n\n\n");
+        printf("\t\t\t Sul");
+        return 0;
     }
 }
