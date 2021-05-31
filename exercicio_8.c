@@ -6,27 +6,19 @@
 
 int main(int argc, char const *argv[])
 {
-    float altura;
-    int sexo;
 
-    printf("Digite o sexo, 1 para M ou 2 para F: ");
-    scanf("%d", &sexo);
+    int anacleto, felizberto;
+    int anos = 0;
+    anacleto = 150;
+    felizberto = 110;
 
-    printf("Digite a altura: ");
-    scanf("%f", &altura);
-
-    if (sexo == 1)
+    while (felizberto < anacleto)
     {
-        printf("Peso ideal: %f", (72.5 * altura) - 58);
-    }
-    else if (sexo == 2)
-    {
-        printf("Ilma. Sra %s", (62.1 * altura) - 44.7);
-    }
-    else
-    {
-        printf("Sexo inválido");
+        felizberto = felizberto + 3;
+        anacleto = anacleto + 2;
+        anos++;
     }
 
+    printf("%d anos para que felizberto seja maior que anacleto", anos);
     return 0;
 }

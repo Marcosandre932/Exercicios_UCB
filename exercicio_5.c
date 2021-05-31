@@ -6,22 +6,17 @@
 
 int main(int argc, char const *argv[])
 {
-    int N, aux, fatorial;
-    do
+
+    for (int i = 1; i <= 7; i++)
     {
-        printf("Escreva o numero a ser calculado o fatorial:");
-        scanf("%d", &N);
+        for (int j = 1; j <= 7; j++)
+        {
+            if (i + j == 7)
+            {
+                printf("\nDado 1: %d | Dado 2: %d | Igual a 7", i, j);
+            }
+        }
+    }
 
-    } while (N < 0);
-
-    aux = 1;
-    fatorial = 1;
-    do
-    {
-        fatorial *= aux;
-
-        aux += 1;
-
-    } while (aux <= N);
-    printf("Resultado: %d", fatorial);
+    return 0;
 }

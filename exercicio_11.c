@@ -6,34 +6,24 @@
 
 int main(int argc, char const *argv[])
 {
-   int a, b, c;
-   printf("Insira o lado 1: ");
-   scanf("%d", &a);
 
-   printf("Insira o lado 2: ");
-   scanf("%d", &b);
+    float media = 0.0;
+    int numero, aux = 0;
 
-   printf("Insira o lado 3: ");
-   scanf("%d", &c);
+    do
+    {
+        printf("\nDigite um numero: ");
+        scanf("%d", &numero);
 
-   if (a > b + c || b > c + a || c > b + a)
-   {
-      printf("Não é possível formar um triângulo");
-      return 0;
-   }
+        if (numero % 2 == 0 && numero != 0)
+        {
+            media = media + numero;
+            aux++;
+        }
 
-   if (a == b && b == c)
-   {
-      printf("Equilatero");
-      return 0;
-   }
+    } while (numero != 0);
+    media = media / aux;
+    printf("Media: %f", media);
 
-   if (a == b || b == c || a == c)
-   {
-      printf("Isosceles");
-      return 0;
-   }
-
-   printf("Escaleno");
-   return 0;
+    return 0;
 }

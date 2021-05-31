@@ -4,20 +4,61 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, char const *argv[])
+int primo(int num)
 {
-    int a;
-    printf("Insira o numero: ");
-    scanf("%d", &a);
+    int i, resultado = 0;
 
-    if (a % 2 == 0)
+    if (num == 1)
     {
-        printf("O numero %d e par", a);
+        return 0;
     }
-    else
+
+    for (i = 2; i <= num / 2; i++)
     {
-        printf("O numero %d nao e par", a);
+        if (num % i == 0)
+        {
+            resultado++;
+            break;
+        }
+    }
+
+    if (resultado == 0)
+    {
+        return 1;
     }
 
     return 0;
+}
+
+int main(int argc, char const *argv[])
+{
+
+    int natural_1, natural_2;
+
+    printf("Digite o primeiro natural: ");
+    scanf("%d", &natural_1);
+
+    printf("Digite o segundo natural: ");
+    scanf("%d", &natural_2);
+
+    if (natural_1 < natural_2)
+    {
+        for (int i = natural_1; i < natural_2; i++)
+        {
+            if (primo(i) == 1)
+            {
+                printf("\n%d", i);
+            }
+        }
+    }
+    else
+    {
+        for (int i = natural_2; i < natural_1; i++)
+        {
+            if (primo(i) == 1)
+            {
+                printf("\n%d", i);
+            }
+        }
+    }
 }

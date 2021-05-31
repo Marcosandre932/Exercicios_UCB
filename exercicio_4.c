@@ -4,28 +4,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int fib(int n)
+{
+    int i, fib1 = 1, fib2 = 1, soma;
+    for (i = 3; i <= n; i = i + 1)
+    {
+        soma = fib1 + fib2;
+        fib1 = fib2;
+        fib2 = soma;
+    }
+    return fib2;
+}
+
 int main(int argc, char const *argv[])
 {
-    char nome[40];
-    int sexo;
 
-    printf("Digite o nome: ");
-    fgets(nome, 40, stdin);
-    printf("Digite o sexo, 1 para M ou 2 para F: ");
-    scanf("%d", &sexo);
-
-    if (sexo == 1)
-    {
-        printf("Ilmo. Sr %s", nome);
-    }
-    else if (sexo == 2)
-    {
-        printf("Ilma. Sra %s", nome);
-    }
-    else
-    {
-        printf("Sexo inválido");
-    }
-
+    printf("%d\n", fib(20));
     return 0;
 }
