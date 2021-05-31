@@ -6,18 +6,16 @@
 
 int main(int argc, char const *argv[])
 {
-    int a, b, resultado = 0;
-    printf("Insira o primeiro numero: ");
-    scanf("%d", &a);
-
-    printf("Insira o segundo numero: ");
-    scanf("%d", &b);
-
-    for (int i = 0; i < a; i++)
+    int n;
+    printf("Insira o valor: ");
+    scanf("%d", &n);
+    if (n < 0)
     {
-        resultado = resultado + b;
+        printf("%d\n", n * -1);
     }
-    printf("Resultado: %d", resultado);
-
+    else
+    {
+        printf("%d\n", n);
+    }
     return 0;
 }

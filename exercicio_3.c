@@ -6,27 +6,20 @@
 
 int main(int argc, char const *argv[])
 {
-    float resultado, pessoas[9];
-    int aux = 0;
+    int a, b, c;
+    printf("Insira o lado 1: ");
+    scanf("%d", &a);
 
-    for (int i = 0; i < 9; i++)
+    printf("Insira o lado 2: ");
+    scanf("%d", &b);
+
+    printf("Insira o lado 3: ");
+    scanf("%d", &c);
+
+    if (a > b + c || b > c + a || c > b + a)
     {
-        printf("Digite a altura da pessoa %d", i + 1);
-        scanf("%f", pessoas[i]);
+        printf("Não é possível formar um triângulo");
     }
-
-    resultado = pessoas[0];
-    while (aux < 10)
-    {
-        if (pessoas[aux] < resultado)
-        {
-            resultado = pessoas[aux];
-        }
-
-        aux++;
-    }
-
-    printf("A menor altura é %f", resultado);
 
     return 0;
 }

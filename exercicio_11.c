@@ -6,54 +6,34 @@
 
 int main(int argc, char const *argv[])
 {
-    char finalista1[50], finalista2[50], finalista3[50];
-    int qtd_juizes, nota1 = 0, nota2 = 0, nota3 = 0;
+   int a, b, c;
+   printf("Insira o lado 1: ");
+   scanf("%d", &a);
 
-    printf("Nome do finalista 1: ");
-    fgets(finalista1, 50, stdin);
+   printf("Insira o lado 2: ");
+   scanf("%d", &b);
 
-    printf("Nome do finalista 2: ");
-    fgets(finalista2, 50, stdin);
+   printf("Insira o lado 3: ");
+   scanf("%d", &c);
 
-    printf("Nome do finalista 3: ");
-    fgets(finalista3, 50, stdin);
+   if (a > b + c || b > c + a || c > b + a)
+   {
+      printf("Não é possível formar um triângulo");
+      return 0;
+   }
 
-    printf("Quantidade juizes: ");
-    scanf("%d", &qtd_juizes);
+   if (a == b && b == c)
+   {
+      printf("Equilatero");
+      return 0;
+   }
 
-    for (int i = 0; i < qtd_juizes; i++)
-    {
-        int temp_nota = 0;
-        printf("Nota do juiz %d para o finalista %s: ", i + 1, finalista1);
-        scanf("%d", &temp_nota);
-        nota1 = nota1 + temp_nota;
+   if (a == b || b == c || a == c)
+   {
+      printf("Isosceles");
+      return 0;
+   }
 
-        printf("Nota do juiz %d para o finalista %s: ", i + 1, finalista2);
-        scanf("%d", &temp_nota);
-        nota1 = nota2 + temp_nota;
-
-        printf("Nota do juiz %d para o finalista %s: ", i + 1, finalista3);
-        scanf("%d", &temp_nota);
-        nota1 = nota3 + temp_nota;
-    }
-
-    printf("Concorrentes e notas: ");
-    printf("Concorrente: %s | nota: %d", finalista1, nota1);
-    printf("Concorrente: %s | nota: %d", finalista2, nota2);
-    printf("Concorrente: %s | nota: %d", finalista3, nota3);
-
-    if (nota1 > nota2 && nota1 > nota3)
-    {
-        printf("Concorrente vencedor: %s | nota: %d", finalista1, nota1);
-    }
-    else if (nota2 > nota1 && nota2 > nota3)
-    {
-        printf("Concorrente vencedor: %s | nota: %d", finalista2, nota2);
-    }
-    else
-    {
-        printf("Concorrente vencedor: %s | nota: %d", finalista3, nota3);
-    }
-
-    return 0;
+   printf("Escaleno");
+   return 0;
 }

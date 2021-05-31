@@ -6,14 +6,26 @@
 
 int main(int argc, char const *argv[])
 {
-    float h;
-    int n;
+    char nome[40];
+    int sexo;
 
-    for (int i = 1; i < n; i++)
+    printf("Digite o nome: ");
+    fgets(nome, 40, stdin);
+    printf("Digite o sexo, 1 para M ou 2 para F: ");
+    scanf("%d", &sexo);
+
+    if (sexo == 1)
     {
-        h = h + 1 / i;
+        printf("Ilmo. Sr %s", nome);
+    }
+    else if (sexo == 2)
+    {
+        printf("Ilma. Sra %s", nome);
+    }
+    else
+    {
+        printf("Sexo inválido");
     }
 
-    prinf("Resultado: %f", h);
     return 0;
 }

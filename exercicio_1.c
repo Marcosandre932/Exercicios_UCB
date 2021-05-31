@@ -6,22 +6,20 @@
 
 int main(int argc, char const *argv[])
 {
-    int N, aux, fatorial;
-    do
+    char placa[9];
+    float velocidade;
+
+    printf("Digite a placa: ");
+    fgets(placa, 9, stdin);
+    printf("Digite a velocide: ");
+    scanf("%f", &velocidade);
+
+    printf("Placa: %s", placa);
+    printf("\nVelocidade: %.2f", velocidade);
+    if (velocidade > 80)
     {
-        printf("Escreva o numero a ser calculado o fatorial:");
-        scanf("%d", &N);
+        printf("Acima da velocidade da via. Motorista multado");
+    }
 
-    } while (N < 0);
-
-    aux = 1;
-    fatorial = 1;
-    do
-    {
-        fatorial *= aux;
-
-        aux += 1;
-
-    } while (aux <= N);
-    printf("Resultado: %d", fatorial);
+    return 0;
 }
